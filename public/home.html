@@ -11,7 +11,6 @@
         <h1 id="logo">Asky</h1>
         <button id="add-btn">Add a question</button>
       </header>
-
       <div id="issue">
         <div id="question">How are you?</div>
         <div id="answers">
@@ -22,6 +21,12 @@
               <label for="answer">type your answer</label><br />
               <input name="answer" type="text" id="answer" required /><br />
               <input type="submit" value="post" />
+              <input
+                type="hidden"
+                id="question_id"
+                name="question_id"
+                value="1"
+              />
             </form>
           </div>
           <div id="previous-answers">

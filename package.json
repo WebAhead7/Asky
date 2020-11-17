@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/WebAhead7/Asky#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.6",
     "pg": "^8.5.1"
   }

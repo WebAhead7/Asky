@@ -1,6 +1,6 @@
-const homeHandler = require("./handlers/home");
-const publicHandler = require("./handlers/public");
-const missingHandler = require("./handlers/missing");
+const homeHandler = require("./handlers/homeHandler");
+const publicHandler = require("./handlers/publicHandler");
+const missingHandler = require("./handlers/missingHandler");
 
 function router(request, response) {
   const url = request.url;
