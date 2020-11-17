@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questions</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="questions" action="question" method="POST">
+        <label for="name">Name:</label>
+        <input name="name" type="text" id="name" required />
+        <label for="email">Email:</label>
+        <input name=" email" type="email" id="email" required />
+        <label for="question">Your Question:</label>
+        <textarea
+          name="Question"
+          id="Question"
+          cols="30"
+          rows="10"
+          required
+        ></textarea>
+        <input type="submit" value="post" />
+      </form>
+    </div>
+  </body>
+</html>
