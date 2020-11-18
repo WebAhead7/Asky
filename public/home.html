@@ -3,24 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="public/home.css" />
     <title>Asky</title>
   </head>
   <body>
+    <header>
+      <h1 id="logo">Asky</h1>
+      <button id="add-btn">Add a question</button>
+    </header>
     <div class="container">
-      <header>
-        <h1 id="logo">Asky</h1>
-        <button id="add-btn">Add a question</button>
-      </header>
       <div id="issue">
+        <h2>Question</h2>
         <div id="question">How are you?</div>
         <div id="answers">
           <div id="add-answer">
+            <h4>Write Answer</h4>
             <form action="answer" method="POST">
-              <label for="name"> Name:</label><br />
+              <label for="name"> Username:</label><br />
               <input name="name" type="text" id="name" required /><br />
-              <label for="answer">type your answer</label><br />
+              <label for="answer">Type your answer:</label><br />
               <input name="answer" type="text" id="answer" required /><br />
-              <input type="submit" value="post" />
+              <input type="submit" value="Post Answer" />
               <input
                 type="hidden"
                 id="question_id"
@@ -29,12 +32,11 @@
               />
             </form>
           </div>
-          <div id="previous-answers">
-            <p id="answer_content">do it</p>
-            <p id="answer_content">do it</p>
-          </div>
+          <div id="previous-answers"></div>
         </div>
       </div>
     </div>
+
+    <script src="public/home.js"></script>
   </body>
 </html>
