@@ -8,4 +8,11 @@ function addAnswer(data) {
   );
 }
 
-module.exports = { addAnswer };
+function addQuestions(questionArr) {
+  return db.query(
+    "INSERT INTO questions(usernameQ, email, question) VALUES ($1,$2,$3)",
+    questionArr
+  );
+}
+
+module.exports = { addQuestions, addAnswer };

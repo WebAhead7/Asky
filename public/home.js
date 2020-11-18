@@ -46,3 +46,8 @@ the database, this is a self invoked function*/
       console.error(error);
     });
 })();
+const addButton = document.querySelector("#add-btn");
+
+addButton.addEventListener("click", () => {
+  window.location.assign("/questionpage");
+});
