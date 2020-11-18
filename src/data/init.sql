@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS questions, answers CASCADE;
 CREATE TABLE questions
  (
   id SERIAL PRIMARY KEY,
-  username VARCHAR(255) NOT NULL,
+  usernameQ VARCHAR(255) NOT NULL,
   email VARCHAR(255),
   question TEXT
 );
@@ -13,17 +13,19 @@ CREATE TABLE questions
 CREATE TABLE answers
  (
   id SERIAL PRIMARY KEY,
-  username VARCHAR(255),
+  usernameA VARCHAR(255),
   answer_content TEXT,
   question_id INTEGER REFERENCES questions(id)
 );
 
-INSERT INTO questions (username, email,question) VALUES
+INSERT INTO questions (usernameQ, email,question) VALUES
   ('Sery1976', 'example@hotmail.com', 'how are you????'),
   ('Notne1991', 'ex@gmail.com', 'whats your name?????'),
-  ('Moull1990', 'abcd@hotmail.com', 'how old are you????');
+  ('Moull1990', 'abcd@hotmail.com', 'how old are you????')
+  ;
 
-INSERT INTO answers (username, answer_content,question_id) VALUES
+
+INSERT INTO answers (usernameA, answer_content,question_id) VALUES
   ('john','Announcing of invitation principles in.', 1),
   ('mark','Announcing of invitation principles in.', 1),
   ('ben','Announcing of invitation principles in.', 1),
