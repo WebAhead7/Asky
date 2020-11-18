@@ -21,7 +21,9 @@ CREATE TABLE answers
 INSERT INTO questions (usernameQ, email,question) VALUES
   ('Sery1976', 'example@hotmail.com', 'how are you????'),
   ('Notne1991', 'ex@gmail.com', 'whats your name?????'),
-  ('Moull1990', 'abcd@hotmail.com', 'how old are you????');
+  ('Moull1990', 'abcd@hotmail.com', 'how old are you????')
+  ;
+
 
 INSERT INTO answers (usernameA, answer_content,question_id) VALUES
   ('john','Announcing of invitation principles in.', 1),

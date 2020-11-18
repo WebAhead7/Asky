@@ -1,18 +1,20 @@
 const fs = require("fs");
 const path = require("path");
+const missingHandler = require("./missingHandler");
 
+//this function reads the home.html file and show it to the user
 function homeHandler(request, response) {
-  const filePath = path.join(__dirname, "..", "..", "public", "home.html");
-  console.log(filePath);
-  fs.readFile(filePath, (error, file) => {
-    if (error) {
-      response.writeHead(404, { "content-type": "text/html" });
-      response.end("<h1>Not found 00000000</h1>");
-    } else {
+  fs.readFile(
+    path.join(__dirname, "..", "..", "public", "home.html"),
+    "utf-8",
+    (error, data) => {
+      if (error) {
+        missingHandler();
+      }
       response.writeHead(200, { "content-type": "text/html" });
-      response.end(file);
+      response.end(data);
     }
-  });
+  );
 }
 
 module.exports = homeHandler;

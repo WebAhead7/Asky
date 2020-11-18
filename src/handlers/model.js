@@ -1,6 +1,12 @@
-// Get Data from the DataBase
-
 const db = require("../data/connection");
+
+function addAnswer(data) {
+  let values = [data.username, data.answer, data.question_id];
+  return db.query(
+    "INSERT INTO answers(usernamea, answer_content,question_id) VALUES($1, $2, $3)",
+    values
+  );
+}
 
 function addQuestions(questionArr) {
   return db.query(
@@ -9,10 +15,4 @@ function addQuestions(questionArr) {
   );
 }
 
-function addAnswers() {}
-
-function getQuestions() {}
-
-function getAnswers() {}
-
-module.exports = { addQuestions, addAnswers, getQuestions, getAnswers };
+module.exports = { addQuestions, addAnswer };
