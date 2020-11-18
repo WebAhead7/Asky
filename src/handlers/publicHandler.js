@@ -15,7 +15,7 @@ function publicHandler(request, response) {
   const extension = urlArray[1];
   const type = types[extension];
   // public directory is one level above this, so we need the ".."
-  const filePath = path.join(__dirname, "..", url);
+  const filePath = path.join(__dirname, "..","..", url);
   fs.readFile(filePath, (error, file) => {
     if (error) {
       console.log(error);
