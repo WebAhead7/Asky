@@ -1,4 +1,3 @@
-const homeURL = "http://localhost:3000/";
 const previousAnswersDiv = document.querySelector("#previous-answers");
 
 const container = document.querySelector(".container");
@@ -16,8 +15,9 @@ the database, this is a self invoked function*/
     })
     .then((data) => {
       console.log(data);
-      let previousQuestionID = 0;
       let questionDiv = document.createElement("div");
+
+      let previousQuestionID = 0;
       for (let i = 0; i < data.length; i++) {
         let questionID = data[i].id;
         let questionWriter = data[i].usernameq;
@@ -25,14 +25,17 @@ the database, this is a self invoked function*/
         let answerWriter = data[i].usernamea;
         let answersContent = data[i].answer_content;
         let answersDiv = document.createElement("div");
+
         if (answersContent !== null) {
           if (questionID !== previousQuestionID || questionID == null) {
+            if (questionID !== 1)
+              questionDiv.innerHTML += "<hr class='separator'>";
             container.appendChild(questionDiv);
             answersDiv.innerHTML = "";
             questionDiv.innerHTML += `<h2 id="${questionID}">Question: ${questionContent}</h2>
           <form action="addanswer" method="POST"> 
-          <input name="username" type="text placeholder="Type your name">
-          <input name="answer" type="text placeholder="Type your answer">
+          <input name="username" type="text placeholder="Type your name" required>
+          <input name="answer" type="text placeholder="Type your answer" required>
           <input type="submit" value="Publish">
           <input type="hidden" name="question_id" value="${questionID}">
           </form>`;

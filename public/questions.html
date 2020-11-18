@@ -3,16 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="public/questions.css" />
     <title>Questions</title>
   </head>
   <body>
-    <div class="container">
-      <form id="questions" action="question" method="POST">
-        <label for="name">Name:</label>
+    <form id="questions" action="question" method="POST">
+      <div>
+        <label for="name">Name:</label><br />
         <input name="name" type="text" id="name" required />
-        <label for="email">Email:</label>
+      </div>
+
+      <div>
+        <label for="email">Email:</label><br />
         <input name="email" type="email" id="email" required />
-        <label for="question">Your Question:</label>
+      </div>
+
+      <div>
+        <label for="question">Your Question:</label><br />
         <textarea
           name="Question"
           id="Question"
@@ -20,8 +27,8 @@
           rows="10"
           required
         ></textarea>
-        <input type="submit" value="post" id="submitButton" />
-      </form>
-    </div>
+      </div>
+      <input type="submit" id="submitButton" value="Post" />
+    </form>
   </body>
 </html>
