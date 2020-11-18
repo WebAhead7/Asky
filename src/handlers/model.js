@@ -3,7 +3,7 @@
 const db = require("../data/connection");
 
 function addQuestions(questionArr) {
-  db.query(
+  return db.query(
     "INSERT INTO questions(usernameQ, email, question) VALUES ($1,$2,$3)",
     questionArr
   );

@@ -1,5 +1,4 @@
 const model = require("./model");
-const db = require("../data/connection");
 
 function addQuestiontoDataBase(request, response) {
   let body = "";
@@ -8,11 +7,18 @@ function addQuestiontoDataBase(request, response) {
   request.on("end", () => {
     const searchParams = new URLSearchParams(body);
     const data = Object.fromEntries(searchParams);
-    model.addQuestions([data["name"], data["email"], data["Question"]]);
+    model
+      .addQuestions([data["name"], data["email"], data["Question"]])
 
-    db.query("SELECT * FROM questions").then((result) =>
-      console.log(result.rows)
-    );
+      .then(() => {
+        response.writeHead(302, { location: "/" });
+        response.end();
+      })
+      .catch((error) => {
+        console.log(error);
+        response.writeHead(500, { "content-type": "text/html" });
+        response.end(`<h1>Something went wrong saving your data</h1>`);
+      });
   });
 }
 
