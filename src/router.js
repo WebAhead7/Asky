@@ -1,9 +1,8 @@
 const homeHandler = require("./handlers/homeHandler");
 const publicHandler = require("./handlers/publicHandler");
 const missingHandler = require("./handlers/missingHandler");
-const getAnswersHandler = require("./handlers/getAnswersHandler");
 const getDataHandler = require("./handlers/getDataHandler");
-const addAnswer = require("./handlers/addAnswersHandler");
+const addAnswerHandler = require("./handlers/addAnswersHandler");
 const addQuestionHandler = require("./handlers/addQuestionHandler");
 const questionpageHandler = require("./handlers/questionpageHandler");
 
@@ -17,10 +16,8 @@ function router(request, response) {
     publicHandler(request, response);
   } else if (url === "/getdata") {
     getDataHandler(request, response);
-  } else if (url.startsWith("/getanswers")) {
-    getAnswersHandler(request, response);
   } else if (url.startsWith("/addanswer")) {
-    addAnswer(request, response);
+    addAnswerHandler(request, response);
   } else if (url === "/question") {
     addQuestionHandler(request, response);
   } else {

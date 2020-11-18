@@ -19,27 +19,42 @@ the database, this is a self invoked function*/
       let previousQuestionID = 0;
       let questionDiv = document.createElement("div");
       for (let i = 0; i < data.length; i++) {
-        let questionID = data[i].question_id;
+        let questionID = data[i].id;
         let questionWriter = data[i].usernameq;
         let questionContent = data[i].question;
         let answerWriter = data[i].usernamea;
         let answersContent = data[i].answer_content;
         let answersDiv = document.createElement("div");
-        if (questionID !== previousQuestionID) {
-          container.appendChild(questionDiv);
-          answersDiv.innerHTML = "";
-          questionDiv.innerHTML += `<h2 id="${questionID}">Question: ${questionContent}</h2>
+        if (answersContent !== null) {
+          if (questionID !== previousQuestionID || questionID == null) {
+            container.appendChild(questionDiv);
+            answersDiv.innerHTML = "";
+            questionDiv.innerHTML += `<h2 id="${questionID}">Question: ${questionContent}</h2>
           <form action="addanswer" method="POST"> 
           <input name="username" type="text placeholder="Type your name">
           <input name="answer" type="text placeholder="Type your answer">
           <input type="submit" value="Publish">
           <input type="hidden" name="question_id" value="${questionID}">
           </form>`;
-          previousQuestionID = data[i].question_id;
-        }
-        answersDiv.innerHTML = `<p>Answer: ${answersContent}</p>
+            previousQuestionID = data[i].question_id;
+          }
+          answersDiv.innerHTML = `<p>Answer: ${answersContent}</p>
         <p>Written By: ${answerWriter}</p>`;
-        questionDiv.appendChild(answersDiv);
+          questionDiv.appendChild(answersDiv);
+        } else {
+          if (questionID !== previousQuestionID || questionID == null) {
+            container.appendChild(questionDiv);
+            answersDiv.innerHTML = "";
+            questionDiv.innerHTML += `<h2 id="${questionID}">Question: ${questionContent}</h2>
+          <form action="addanswer" method="POST"> 
+          <input name="username" type="text placeholder="Type your name">
+          <input name="answer" type="text placeholder="Type your answer">
+          <input type="submit" value="Publish">
+          <input type="hidden" name="question_id" value="${questionID}">
+          </form>`;
+            previousQuestionID = data[i].question_id;
+          }
+        }
       }
     })
     .catch((error) => {
