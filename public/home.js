@@ -59,7 +59,7 @@ the database, this is a self invoked function*/
           questionDiv.appendChild(answersDiv);
         } 
         
-        */new question to add that has no answers yet*/
+        /*new question to add that has no answers yet*/
         else {
           questionDiv.innerHTML += "<hr class='separator'>";
           
