@@ -34,8 +34,8 @@ the database, this is a self invoked function*/
             answersDiv.innerHTML = "";
             questionDiv.innerHTML += `<h2 id="${questionID}">Question: ${questionContent}</h2>
           <form action="addanswer" method="POST"> 
-          <input name="username" type="text placeholder="Type your name" required>
-          <input name="answer" type="text placeholder="Type your answer" required>
+          <input name="username" type="text" placeholder="Type your name" required>
+          <input name="answer" type="text" placeholder="Type your answer" required>
           <input type="submit" value="Publish">
           <input type="hidden" name="question_id" value="${questionID}">
           </form>`;
@@ -50,8 +50,8 @@ the database, this is a self invoked function*/
             answersDiv.innerHTML = "";
             questionDiv.innerHTML += `<h2 id="${questionID}">Question: ${questionContent}</h2>
           <form action="addanswer" method="POST"> 
-          <input name="username" type="text placeholder="Type your name">
-          <input name="answer" type="text placeholder="Type your answer">
+          <input name="username" type="text" placeholder="Type your name">
+          <input name="answer" type="text" placeholder="Type your answer">
           <input type="submit" value="Publish">
           <input type="hidden" name="question_id" value="${questionID}">
           </form>`;
