@@ -55,7 +55,7 @@ the database, this is a self invoked function*/
           
           answersDiv.innerHTML = `<p> 
           Answer: ${answersContent}</p>
-          <p>Written By: ${answerWriter}</p>`;
+          <p style="font-size: 20px">Written By: ${answerWriter}</p>`;
           questionDiv.appendChild(answersDiv);
         } 
         
