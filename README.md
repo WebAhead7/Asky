@@ -27,6 +27,9 @@
 <!-- GETTING STARTED -->
 
 ## Getting Started
+our website is pretty easy to use, any user can ask and answer question other have posted. you can scroll over the questions and check wherther there is a question that might be relevante to you. 
+- posting a new question: you can easily post a new question by clicking an add post button here--->
+
 
 
 ## Built With
