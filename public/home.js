@@ -28,11 +28,11 @@ the database, this is a self invoked function*/
 
         if (answersContent !== null) {
           if (questionID !== previousQuestionID || questionID == null) {
-            if (questionID !== 1)
-              questionDiv.innerHTML += "<hr class='separator'>";
+            if (questionID !== 1) questionDiv.innerHTML += "<hr class='separator'>";
             container.appendChild(questionDiv);
             answersDiv.innerHTML = "";
-            questionDiv.innerHTML += `<h2 id="${questionID}">Question: ${questionContent}</h2>
+            questionDiv.innerHTML += `<h2 id="${questionID}"> 
+          Question: ${questionContent}</h2>
           <form action="addanswer" method="POST"> 
           <input name="username" type="text" placeholder="Type your name" required>
           <input name="answer" type="text" placeholder="Type your answer" required>
@@ -41,15 +41,17 @@ the database, this is a self invoked function*/
           </form>`;
             previousQuestionID = data[i].question_id;
           }
-          answersDiv.innerHTML = `<p>Answer: ${answersContent}</p>
-        <p>Written By: ${answerWriter}</p>`;
+          answersDiv.innerHTML = `<p> 
+          Answer: ${answersContent}</p>
+          <p>Written By: ${answerWriter}</p>`;
           questionDiv.appendChild(answersDiv);
         } else {
           questionDiv.innerHTML += "<hr class='separator'>";
           if (questionID !== previousQuestionID || questionID == null) {
             container.appendChild(questionDiv);
             answersDiv.innerHTML = "";
-            questionDiv.innerHTML += `<h2 id="${questionID}">Question: ${questionContent}</h2>
+            questionDiv.innerHTML += `<h2 id="${questionID}">
+          Question: ${questionContent}</h2>
           <form action="addanswer" method="POST"> 
           <input name="username" type="text" placeholder="Type your name">
           <input name="answer" type="text" placeholder="Type your answer">
