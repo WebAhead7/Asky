@@ -45,6 +45,7 @@ the database, this is a self invoked function*/
         <p>Written By: ${answerWriter}</p>`;
           questionDiv.appendChild(answersDiv);
         } else {
+          questionDiv.innerHTML += "<hr class='separator'>";
           if (questionID !== previousQuestionID || questionID == null) {
             container.appendChild(questionDiv);
             answersDiv.innerHTML = "";
