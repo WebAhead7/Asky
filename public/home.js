@@ -33,8 +33,10 @@ the database, this is a self invoked function*/
         
         /*check if this is valid answer to a given question.*/
         if (answersContent !== null) {
+          
           /*new question to add to the form*/
           if (questionID !== previousQuestionID || questionID == null) {
+            
             /*add a line bfore a new question*/
             if (questionID !== 1) questionDiv.innerHTML += "<hr class='separator'>";
             container.appendChild(questionDiv);
@@ -50,14 +52,17 @@ the database, this is a self invoked function*/
           </form>`;
             previousQuestionID = data[i].question_id;
           }
+          
           answersDiv.innerHTML = `<p> 
           Answer: ${answersContent}</p>
           <p>Written By: ${answerWriter}</p>`;
           questionDiv.appendChild(answersDiv);
         } 
+        
         */new question to add that has no answers yet*/
         else {
           questionDiv.innerHTML += "<hr class='separator'>";
+          
           /*add answer form to the user*/
           if (questionID !== previousQuestionID || questionID == null) {
             container.appendChild(questionDiv);
@@ -72,6 +77,7 @@ the database, this is a self invoked function*/
           </form>`;
             previousQuestionID = data[i].question_id;
           }
+          
         }
       }
     })
