@@ -28,8 +28,14 @@
 
 ## Getting Started
 our website is pretty easy to use, any user can ask and answer question other have posted. you can scroll over the questions and check wherther there is a question that might be relevante to you. 
-- posting a new question: you can easily post a new question by clicking an add post button here--->
-
+- posting a new question: you can easily post a new question by clicking the add post button here--->
+<p align = "center">
+  <img src= 'https://github.com/WebAhead7/Asky/blob/main/public/main-website.PNG' width="80%" height="500" />
+</p>
+  what you have to do is just to fill a simple form like in the following structure and you are ready to go:
+  <p align = "center">
+  <img src= 'https://github.com/WebAhead7/Asky/blob/main/public/form.PNG' width="80%" height="500" />
+</p>
 
 
 ## Built With
