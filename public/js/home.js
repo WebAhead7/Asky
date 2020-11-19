@@ -42,7 +42,7 @@ the database, this is a self invoked function*/
             previousQuestionID = data[i].question_id;
           }
           answersDiv.innerHTML = `<p>Answer: ${answersContent}</p>
-        <p>Written By: ${answerWriter}</p>`;
+        <p style="font-size: 20px">Written By: ${answerWriter}</p>`;
           questionDiv.appendChild(answersDiv);
         } else {
           if (questionID !== previousQuestionID || questionID == null) {
