@@ -1,4 +1,3 @@
-const { log } = require("console");
 const fs = require("fs");
 const path = require("path");
 
@@ -12,10 +11,10 @@ const types = {
 
 function publicHandler(request, response) {
   const url = request.url;
-  console.log(url);
   const urlArray = url.split(".");
   const extension = urlArray[1];
   const type = types[extension];
+    if(type!=undefined){ 
   // public directory is one level above this, so we need the ".."
   const filePath = path.join(__dirname, "..", "..", url);
   fs.readFile(filePath, (error, file) => {
@@ -28,6 +27,10 @@ function publicHandler(request, response) {
       response.end(file);
     }
   });
+  }
+  else{
+    response.writeHead(404, { "content-type": "text/html"});
+      response.end("<h1>NOT FOUND</h1>");
 }
 
 module.exports = publicHandler;
