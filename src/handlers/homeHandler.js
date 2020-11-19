@@ -5,7 +5,7 @@ const missingHandler = require("./missingHandler");
 //this function reads the home.html file and show it to the user
 function homeHandler(request, response) {
   fs.readFile(
-    path.join(__dirname, "..", "..", "public", "home.html"),
+    path.join(__dirname, "..", "..", "public", "html", "home.html"),
     "utf-8",
     (error, data) => {
       if (error) {
