@@ -19,6 +19,9 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
+#### Being curious is in our mother nature as human beings, our project is here to help! you can ask pepole what ever what! and other users will answer you with love.
+##### The role model of our website is to encourage mutual support =D 
+
 
 
 <!-- GETTING STARTED -->
